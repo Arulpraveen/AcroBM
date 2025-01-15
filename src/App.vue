@@ -160,7 +160,7 @@ html, body {
   padding: 0; /* Add spacing around the QR code */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Shadow for depth */
-  transition: transform 0.2s ease, opacity 0.5s ease; /*Smooth animation */
+  transition: transform 0.5s ease, opacity 0.5s ease; /*Smooth animation */
   opacity: 1; /*Fully visible */
   transform: translateY(0); 
   align-content: center;
@@ -170,7 +170,7 @@ html, body {
 
 .qr-code-hidden {
   opacity: 0; /* Fade out */
-  transform: translateY(-50px); /* Move off-screen upward */
+  transform: translateY(-300px); /* Move off-screen upward */
   z-index: 9999;
   pointer-events: none; /* Prevent interaction while hidden */
 }
