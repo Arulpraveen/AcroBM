@@ -1,0 +1,61 @@
+@font-face {
+    font-family: ppnm-SemiBoldItalic;
+    src: url('./PPNeueMontreal-SemiBolditalic.woff2') format('woff2'),
+        url('./PPNeueMontreal-SemiBolditalic.woff') format('woff');
+    
+    font-display: swap;
+}
+
+@font-face {
+    font-family: ppnm-Regular;
+    src: url('./PPNeueMontreal-Regular.woff2') format('woff2');
+        /* url('./PPNeueMontreal-Regular.woff') format('woff'); */
+        font-display: swap;
+}
+
+@font-face {
+    font-family: ppnm-Thin;
+    src: url('./PPNeueMontreal-Thin.ttf') format('truetype'),
+    url('./PPNeueMontreal-Thin.woff2') format('woff2'),
+        url('./PPNeueMontreal-Thin.woff') format('woff');
+    
+    font-display: swap;
+
+}
+
+@font-face {
+    font-family: ppnm-SemiBold;
+    src: url('./PPNeueMontreal-SemiBold.woff2') format('woff2'),
+        url('./PPNeueMontreal-SemiBold.woff') format('woff');
+        font-display: swap;
+
+}
+
+@font-face {
+    font-family: ppnm-Book;
+    src: url('./PPNeueMontreal-Book.woff2') format('woff2'),
+        url('./PPNeueMontreal-Book.woff') format('woff');
+        font-display: swap;
+}
+
+@font-face {
+    font-family: ppnm-Italic;
+    src: url('./PPNeueMontreal-Italic.woff2') format('woff2'),
+        url('./PPNeueMontreal-Italic.woff') format('woff');
+        font-display: swap;
+}
+
+@font-face {
+    font-family: ppnm-Medium;
+    src: url('./PPNeueMontreal-Medium.woff2') format('woff2'),
+        url('./PPNeueMontreal-Medium.woff') format('woff');
+        font-display: swap;
+}
+
+@font-face {
+    font-family: ppnm-Bold;
+    src: url('./PPNeueMontreal-Bold.woff2') format('woff2'),
+        url('./PPNeueMontreal-Bold.woff') format('woff');
+        font-display: swap;
+}
+
