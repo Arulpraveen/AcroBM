@@ -1,24 +1,35 @@
 <template>
-  <div id="app" @mousemove="resetTimer" @keydown="resetTimer" @click="resetTimer" @touchstart="resetTimer" @scroll="handleScroll">
+  <div
+    id="app"
+    @mousemove="resetTimer"
+    @keydown="resetTimer"
+    @click="resetTimer"
+    @touchstart="resetTimer"
+    @scroll="resetTimer"
+  >
+    <!-- Screensaver -->
+    <div v-if="isScreensaverActive" class="screensaver" @click="resetTimer">
+      <video autoplay muted loop class="screensaver-video">
+        <source src="screensaver2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-    <div
-      v-if="!hideQRCode"
-      class="qr-code"
-    >
+    <!-- QR Code -->
+    <div :class="['qr-code', { 'qr-code-hidden': hideQRCode }]" v-if="!isScreensaverActive">
       <img src="QR.png" alt="QR Code" />
     </div>
 
     <!-- Sections -->
     <component v-for="section in sections" :is="section.component" :key="section.name" />
-
-    <!-- <interactive-video class="section"></interactive-video> -->
-
   </div>
 </template>
 
 
+
+
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 // Import section components
 import Section1 from "./components/Section1.vue";
@@ -31,9 +42,8 @@ import Section7 from "./components/Section7.vue";
 import Section8 from "./components/Section8.vue";
 import Section9 from "./components/Section9.vue";
 import Section10 from "./components/Section10.vue";
-// import InteractiveVideo from "./components/InteractiveVideo.vue";
 
-// Define sections dynamically
+// Sections definition
 const sections = ref([
   { name: "Section1", component: Section1 },
   { name: "Section2", component: Section2 },
@@ -47,31 +57,43 @@ const sections = ref([
   { name: "Section10", component: Section10 },
 ]);
 
+// Reactive states
 const hideQRCode = ref(false);
+const isScreensaverActive = ref(false);
 
-// Handle scroll event
-const handleScroll = (event) => {
-  const scrollPosition = event.target.scrollTop;
-  const sectionHeight = window.innerHeight; // Assuming each section is full height
-  const totalSections = sections.value.length;
-  const lastSectionTop = (totalSections - 2) * sectionHeight;
+let timer; // Timer for inactivity
 
-  // Debugging log to verify scroll position
-  console.log("Scroll Position:", scrollPosition);
-  console.log("Last Position:", lastSectionTop);
-  console.log("hideQRCode:", hideQRCode.value);
-  
+// Reset inactivity timer
+const resetTimer = () => {
+  isScreensaverActive.value = false; // Deactivate screensaver
+  clearTimeout(timer); // Reset timer
 
-  // Hide QR code when the last section is in view
-  hideQRCode.value = scrollPosition >= lastSectionTop;
+  timer = setTimeout(() => {
+    isScreensaverActive.value = true; // Activate screensaver after 10s of inactivity
+  }, 10000); // 10 seconds
+
+  if (event && event.type === "scroll") {
+    const scrollPosition = event.target.scrollTop;
+    const sectionHeight = window.innerHeight;
+    const lastSectionTop = (sections.value.length - 2) * sectionHeight;
+
+    hideQRCode.value = scrollPosition >= lastSectionTop;
+  }
 };
 
+// Attach and clean up event listeners
+onMounted(() => {
+  resetTimer();
+});
+
+onUnmounted(() => {
+  clearTimeout(timer);
+});
 </script>
 
 
 
 <style>
-/* @import '/assets/fonts/stylesheet.css'; */
 
 html, body {
   margin: 0; /* Remove default margins */
@@ -107,6 +129,25 @@ html, body {
 /* Optional: Hide scrollbar for all browsers */
 #app::-webkit-scrollbar {
   display: none;
+}
+
+.screensaver {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 9999; /* Ensure it overlays everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.screensaver-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure video covers the entire screen */
 }
 
 .qr-code {
