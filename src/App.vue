@@ -17,7 +17,7 @@
 
     <!-- QR Code -->
     <div :class="['qr-code', { 'qr-code-hidden': hideQRCode }]" v-if="!isScreensaverActive">
-      <img src="Qr.png" alt="QR Code" />
+      <img src="Qr.jpeg" alt="QR Code" />
     </div>
 
     <!-- Sections -->
