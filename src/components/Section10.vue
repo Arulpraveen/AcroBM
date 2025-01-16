@@ -8,7 +8,7 @@
         <h1>Scan the QR Code</h1>
       </div>
       <div class="qr">
-        <img src="QR.png" alt="QR code" />
+        <img src="Qr.jpeg" alt="QR code" />
       </div>
 
     </div>
@@ -53,6 +53,11 @@
 
   .content h1{
     margin: 0;
+  }
+
+  .qr img{
+
+    border-radius: 20px;
   }
   </style>
   
