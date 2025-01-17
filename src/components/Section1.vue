@@ -3,7 +3,7 @@
   <div class="section section1">
 
     <video autoplay muted loop preload="none" class="background-video">
-      <source src="HeroPag.mp4" type="video/mp4" />
+      <source src="HeroPage.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <div class="overlay-text">
@@ -32,6 +32,8 @@ export default {
   justify-content: center;
   /* padding: 100px; */
 }
+
+
 
 .overlay-text h1{
 
