@@ -30,6 +30,7 @@
     text-align: center;
     color: #717171;
     font-family: ppnm-Regular;
+    
   }
   </style>
   
