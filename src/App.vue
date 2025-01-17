@@ -128,27 +128,63 @@ html, body {
 
 .screensaver-cta {
   position: absolute;
-  top: 20%; /* Center vertically */
+  top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Offset by 50% of its own dimensions */
+  transform: translate(-50%, -50%); /* Center the element */
   z-index: 10000;
-  background-color: rgba(121, 23, 197, 0.784); /* Semi-transparent black background */
   padding: 20px 40px;
   border-radius: 25px;
   color: white;
-  font-size: 1.5rem;
+  font-size: 2rem; /* Larger text */
   font-weight: bold;
   text-align: center;
+  background: linear-gradient(45deg, rgba(121, 23, 197, 0.8), rgba(255, 112, 150, 0.8));
+  background-size: 200% 200%;
   box-shadow: 0 4px 10px rgba(112, 10, 208, 0.5);
-  animation: pulse 2s infinite; /* Add a pulsing effect */
+  animation: gradientShift 6s infinite, pulse 2s infinite;
+  cursor: pointer; /* Indicates it's clickable */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.screensaver-cta:hover {
+  transform: translate(-50%, -50%) scale(1.1); /* Enlarge slightly on hover */
+  box-shadow: 0 8px 20px rgba(112, 10, 208, 0.7); /* Add a stronger shadow */
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes pulse {
   0%, 100% {
-    transform: translate(-50%, -50%) scale(1); /* Centered and default size */
+    transform: translate(-50%, -50%) scale(1); /* Normal size */
   }
   50% {
-    transform: translate(-50%, -50%) scale(1.1); /* Slightly enlarge */
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly enlarge */
+  }
+}
+
+.screensaver-cta p {
+  margin: 0;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+  animation: glow 1.5s infinite alternate; /* Glowing text effect */
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
   }
 }
 
