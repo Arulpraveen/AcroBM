@@ -116,6 +116,8 @@ html, body {
   overflow-y: scroll; /* Allow vertical scrolling */
   height: 100vh; /* Full viewport height */
   scrollbar-width: none; /* Hide scrollbar in Firefox */
+
+
 }
 
 .section {
@@ -124,6 +126,9 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  margin: 5px;
+  /* padding: 5px; */
 }
 
 /* Optional: Hide scrollbar for all browsers */
@@ -152,7 +157,7 @@ html, body {
 
 .qr-code {
   position: fixed; /* Ensures it stays in the top right corner */
-  top: 20px; /* Distance from the top of the viewport */
+  top: 35px; /* Distance from the top of the viewport */
   right: 20px; /* Distance from the right of the viewport */
   z-index: 9999; /* Ensures it is above other elements */
   background: white; /* Background color for contrast */

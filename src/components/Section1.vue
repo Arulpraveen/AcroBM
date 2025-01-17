@@ -1,5 +1,6 @@
 <template>
   <div class="section section1">
+
     <video autoplay muted loop preload="none" class="background-video">
       <source src="HeroPage.mp4" type="video/mp4" />
       Your browser does not support the video tag.
@@ -20,7 +21,11 @@ export default {
 <style scoped>
 @import '../assets/fonts/stylesheet.css';
 
+.box{
 
+  padding: 5px;
+
+}
 
 .section1 {
   position: relative; /* Needed for absolute positioning inside */
@@ -29,6 +34,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* padding: 100px; */
 }
 
 .overlay-text h1{
