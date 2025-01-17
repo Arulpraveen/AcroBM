@@ -63,7 +63,7 @@ export default {
 }
 
 .video-player {
-  width: 100%;
+  width: 60%;
   max-width: 700px;
   border-radius: 10px;
   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */

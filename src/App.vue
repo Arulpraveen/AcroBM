@@ -70,7 +70,7 @@ const resetTimer = () => {
 
   timer = setTimeout(() => {
     isScreensaverActive.value = true; // Activate screensaver after 10s of inactivity
-  }, 10000); // 10 seconds
+  }, 20000); // 20 seconds
 
   if (event && event.type === "scroll") {
     const scrollPosition = event.target.scrollTop;
