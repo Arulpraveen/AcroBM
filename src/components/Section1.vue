@@ -1,4 +1,5 @@
 <template>
+  <div class="wrap">
   <div class="section section1">
 
     <video autoplay muted loop preload="none" class="background-video">
@@ -10,6 +11,7 @@
       <h2>ACRO</h2>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -20,12 +22,6 @@ export default {
 
 <style scoped>
 @import '../assets/fonts/stylesheet.css';
-
-.box{
-
-  padding: 5px;
-
-}
 
 .section1 {
   position: relative; /* Needed for absolute positioning inside */
@@ -74,6 +70,8 @@ export default {
   height: 100%;
   object-fit: cover;
   z-index: -1; /* Sends the video behind the content */
+  /* margin: 5px;
+  border-radius: 10px; */
 }
 
 .overlay-text {

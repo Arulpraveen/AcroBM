@@ -13,6 +13,10 @@
         <source src="screensaver2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <!-- Tap to Know More CTA -->
+      <div class="screensaver-cta">
+        <p>Tap to know more</p>
+      </div>
     </div>
 
     <!-- QR Code -->
@@ -100,6 +104,7 @@ html, body {
   padding: 0; /* Remove default padding */
   height: 100vh; /* Ensure body spans full height */
   overflow: hidden; /* Prevent scrollbars caused by margin/padding issues */
+  color: #4b4b4b;
   /* text-rendering: optimizeLegibility; */
 }
 
@@ -116,9 +121,38 @@ html, body {
   overflow-y: scroll; /* Allow vertical scrolling */
   height: 100vh; /* Full viewport height */
   scrollbar-width: none; /* Hide scrollbar in Firefox */
+  color: #4b4b4b;
 
 
 }
+
+.screensaver-cta {
+  position: absolute;
+  top: 20%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset by 50% of its own dimensions */
+  z-index: 10000;
+  background-color: rgba(121, 23, 197, 0.784); /* Semi-transparent black background */
+  padding: 20px 40px;
+  border-radius: 25px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(112, 10, 208, 0.5);
+  animation: pulse 2s infinite; /* Add a pulsing effect */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1); /* Centered and default size */
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1); /* Slightly enlarge */
+  }
+}
+
+
 
 .section {
   scroll-snap-align: center; /* Snap each section to the top */
@@ -128,7 +162,7 @@ html, body {
   justify-content: center;
   border-radius: 10px;
   margin: 5px;
-  /* padding: 5px; */
+  /* padding: 50px; */
 }
 
 /* Optional: Hide scrollbar for all browsers */
