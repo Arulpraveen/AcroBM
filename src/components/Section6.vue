@@ -1,22 +1,26 @@
 <template>
   <div class="video-container section">
     <!-- Video -->
-    <video ref="videoPlayer" class="video-player" :src="videoSrc" ></video>
+    <video ref="videoPlayer" class="video-player" :src="videoSrc"></video>
 
     <!-- Controls -->
     <div class="controls">
       <div class="title">
         <div class="head">
-        Three Adjustable Modes
+          Three Adjustable Modes
+        </div>
+        <div class="content">
+          Whether they’re just starting out or growing fast, this bike adapts to fit their needs. Adjust between three
+          sizes to ensure your child’s riding experience is always safe, comfortable, and fun.
+        </div>
       </div>
-        <div class="content">Whether they’re just starting out or growing fast, this bike adapts to fit their needs. Adjust between three sizes to ensure your child’s riding experience is always safe, comfortable, and fun.</div>
-      </div>
-      <button @click="seekTo(0)">Small</button>
-      <button @click="seekTo(1)">Medium</button>
-      <button @click="seekTo(2)">Large</button>
+      <button :class="{ active: activeButton === 0 }" @click="setActive(0)">Small</button>
+      <button :class="{ active: activeButton === 1 }" @click="setActive(1)">Medium</button>
+      <button :class="{ active: activeButton === 2 }" @click="setActive(2)">Large</button>
     </div>
   </div>
 </template>
+
 
 <script>
 import { ref } from "vue";
@@ -26,6 +30,7 @@ export default {
   setup() {
     const videoPlayer = ref(null);
     const videoSrc = "Acro.mp4"; // Replace with your video file path
+    const activeButton = ref(0); // Default active button (Small)
 
     const seekTo = (time) => {
       const video = videoPlayer.value;
@@ -44,9 +49,16 @@ export default {
       }
     };
 
+    const setActive = (index) => {
+      activeButton.value = index; // Set the active button
+      seekTo(index); // Seek to the corresponding video timestamp
+    };
+
     return {
       videoPlayer,
       videoSrc,
+      activeButton,
+      setActive,
       seekTo,
     };
   },
@@ -111,11 +123,17 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   font-size: 24px;
 }
 
 button:hover {
   background-color: #ff5310;
+}
+
+button.active {
+  background-color: #ff5310; /* Highlight active button */
+  color: white;
+  transform: scale(1.05); /* Slightly enlarge the active button */
 }
 </style>
