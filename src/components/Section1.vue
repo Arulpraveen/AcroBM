@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+
   <div class="section section1">
 
     <video autoplay muted loop preload="none" class="background-video">
@@ -10,7 +10,6 @@
       <img src="vida.svg" alt="VIDA Logo" class="vida-logo" />
       <h2>ACRO</h2>
     </div>
-  </div>
   </div>
 </template>
 
