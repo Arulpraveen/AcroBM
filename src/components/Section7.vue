@@ -1,7 +1,7 @@
 <template>
   <div class="section section7">
     <video autoplay muted loop class="background-video">
-    <source src="BATTERY.mp4" type="video/mp4" />
+    <source src="Battery_Remove_Fast.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
   <div class="glassmorphic-box">
