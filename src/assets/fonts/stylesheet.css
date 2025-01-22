@@ -8,8 +8,8 @@
 
 @font-face {
     font-family: ppnm-Regular;
-    src: url('./PPNeueMontreal-Regular.woff2') format('woff2');
-        /* url('./PPNeueMontreal-Regular.woff') format('woff'); */
+    src: url('./PPNeueMontreal-Regular.woff2') format('woff2'),
+        url('./PPNeueMontreal-Regular.woff') format('woff');
         font-display: swap;
 }
 
