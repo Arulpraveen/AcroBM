@@ -10,7 +10,7 @@
     <!-- Screensaver -->
     <div v-if="isScreensaverActive" class="screensaver" @click="resetTimer">
       <video autoplay muted loop class="screensaver-video">
-        <source src="screensaver22.mp4" type="video/mp4" />
+        <source src="Screensaver22.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <!-- Tap to Know More CTA -->
